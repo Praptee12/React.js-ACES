@@ -1,9 +1,12 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Navbar from './Navbar';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
-const Createblog = () => {
+const EditForm = () => {
+  const { id } = useParams(); // get blog ID from URL
+  const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     title: '',
     subtitle: '',
@@ -11,23 +14,42 @@ const Createblog = () => {
     image: ''
   });
 
-  const navigate = useNavigate();
+  useEffect(() => {
+    async function fetchBlog() {
+      try {
+        const response = await axios.get(`https://687af3c4abb83744b7ee4a32.mockapi.io/blogs/${id}`);
+        if (response.status === 200) {
+          setFormData(response.data);
+        } else {
+          alert("Failed to fetch blog!");
+        }
+      } catch (err) {
+        alert("Error fetching blog!");
+      }
+    }
+
+    fetchBlog();
+  }, [id]);
 
   const handleChange = (e) => {
-    setFormData({ 
-      ...formData, 
-      [e.target.name]: e.target.value 
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
     });
   };
 
-  const handleSubmit = async (e) => {
+  const handleUpdate = async (e) => {
     e.preventDefault();
-    const response = await axios.post('https://687af3c4abb83744b7ee4a32.mockapi.io/blogs', formData);
-    if (response.status === 201) {
-      alert("Blog Created Successfully!");
-      navigate('/');
-    } else {
-      alert("Something went wrong!");
+    try {
+      const response = await axios.put(`https://687af3c4abb83744b7ee4a32.mockapi.io/blogs/${id}`, formData);
+      if (response.status === 200) {
+        alert("Blog updated successfully!");
+        navigate('/');
+      } else {
+        alert("Update failed!");
+      }
+    } catch (err) {
+      alert("Error updating blog!");
     }
   };
 
@@ -35,9 +57,9 @@ const Createblog = () => {
     <>
       <Navbar />
       <div className="max-w-4xl mx-auto p-6 bg-white shadow-lg mt-10 rounded-xl">
-        <h1 className="text-2xl font-bold mb-4">Create New Blog</h1>
+        <h1 className="text-2xl font-bold mb-4">Edit Blog</h1>
 
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleUpdate} className="space-y-4">
           <input 
             type="text"
             name="title"
@@ -75,13 +97,12 @@ const Createblog = () => {
           />
         </form>
 
-        {/* Button outside of form, bottom-right aligned */}
         <div className="flex justify-end mt-6">
           <button 
-            onClick={handleSubmit}
-            className="px-6 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-all"
+            onClick={handleUpdate}
+            className="px-6 py-2 bg-green-600 text-white rounded-full hover:bg-green-700 transition-all"
           >
-            Create
+            Update
           </button>
         </div>
       </div>
@@ -89,4 +110,4 @@ const Createblog = () => {
   );
 };
 
-export default Createblog;
+export default EditForm;
