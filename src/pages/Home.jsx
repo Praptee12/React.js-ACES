@@ -2,6 +2,7 @@ import React, { useEffect ,useState}from 'react';
 import Navbar from '../components/Navbar';
 import Card from '../components/card';
 import axios from 'axios';
+import { Link } from "react-router-dom";
 const Home = () => {
   const[blogs,setBlogs]=useState([])
   async function fetchBlogs(){
@@ -34,6 +35,11 @@ const Home = () => {
         
          })}
       </div>
+      <Link to="/create">
+  <button className="bg-[#EF88AD]  hover:bg-[rgb(165, 56, 96)] text-white px-10 py-2 rounded-xl mt-4">
+    Create
+  </button>
+</Link>
       
    </>
   );
