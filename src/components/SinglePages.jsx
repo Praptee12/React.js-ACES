@@ -41,16 +41,19 @@ const SinglePage = () => {
   return(
     <>
     <Navbar/> 
+    <div className=" bg-cover min-h-screen mt-2 rounded-xl p-5 bg-black bg-opacity-80"
+    style={{backgroundImage:'url("https://hips.hearstapps.com/hmg-prod/images/lede-lilacbush-1527115026.jpg")'}}>
     
-    <div className="mt-20 ml-3">
-      <img src={blogs.image} alt="" />
-      <h1 className=" text-black text-3xl font-bold">{blogs.title}</h1>
+    <div className=" ml-3 ">
+      <img src={blogs.image} className="border border-black rounded-4xl size-80 mt-10 space-x-0.3" alt="" />
+      <h1 className=" text-black text-3xl font-bold mt-2">{blogs.title}</h1>
       <h1>{blogs.Subtitle}</h1>
       <h1>{blogs.Description}</h1>
       <div className="flex space-x-4">
       <button onClick={deleteBlogs} className="bg-[#AE6FAF] border-black text-white  px-3 py-2 mt-4 rounded-2xl ">Delete</button>
  <Link  to={"/edit/"+ blogs.id} className="bg-[#603b61] border border-black space-x-4 text-white rounded-2xl px-3 py-2 mt-4"> Edit Me</Link>
  </div>
+    </div>
     </div>
     </>
   )
