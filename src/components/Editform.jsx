@@ -52,7 +52,7 @@ const EditForm = () => {
   return (
     <>
       <Navbar />
-      <div className="max-w-4xl mx-auto p-6 bg-white shadow-lg mt-10 rounded-xl">
+      <div className="max-w-4xl mx-auto p-6 bg-[#ece3f0] shadow-lg mt-10 rounded-xl">
         <h1 className="text-2xl font-bold mb-4">Edit Blog</h1>
 
         <form onSubmit={handleUpdate} className="space-y-4">
@@ -62,7 +62,7 @@ const EditForm = () => {
             placeholder="Title"
             value={formData.title}
             onChange={handleChange}
-            className="w-full p-3 border border-gray-300 rounded-lg"
+            className="w-full p-3 border border-black rounded-lg"
             required
           />
           <input 
@@ -71,7 +71,7 @@ const EditForm = () => {
             placeholder="Subtitle"
             value={formData.subtitle}
             onChange={handleChange}
-            className="w-full p-3 border border-gray-300 rounded-lg"
+            className="w-full p-3 border border-black rounded-lg"
             required
           />
           <textarea 
@@ -79,7 +79,7 @@ const EditForm = () => {
             placeholder="Description"
             value={formData.description}
             onChange={handleChange}
-            className="w-full p-3 border border-gray-300 rounded-lg"
+            className="w-full p-3 border border-black rounded-lg"
             rows="4"
             required
           />
@@ -89,12 +89,12 @@ const EditForm = () => {
             placeholder="Image URL"
             value={formData.image}
             onChange={handleChange}
-            className="w-full p-3 border border-gray-300 rounded-lg"
+            className="w-full p-3 border border-black rounded-lg"
           />
           <div className="flex justify-end mt-6">
             <button 
               type="submit"
-              className="px-6 py-2 bg-green-600 text-white rounded-full hover:bg-green-700 transition-all"
+              className="px-6 py-2 bg-[#d3bbdd]  text-black rounded-full hover:bg-[#c26dbc] transition-all"
             >
               Update
             </button>

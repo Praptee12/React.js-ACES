@@ -42,14 +42,14 @@ const SinglePage = () => {
     <>
     <Navbar/> 
     
-    <div className="mt-100">
-      <img src={blogs.image} alt=""/>
-      <h1>{blogs.title}</h1>
+    <div className="mt-20 ml-3">
+      <img src={blogs.image} alt="" />
+      <h1 className=" text-black text-3xl font-bold">{blogs.title}</h1>
       <h1>{blogs.Subtitle}</h1>
       <h1>{blogs.Description}</h1>
       <div className="flex space-x-4">
-      <button onClick={deleteBlogs} className="bg-blue-400 border border-black text-white  px-3 py-2 mt-4 rounded-2xl ">Delete</button>
- <Link  to={"/edit/"+ blogs.id} className="bg-blue-400  border border-black space-x-4 text-white rounded-2xl px-3 py-2 mt-4"> Edit Me</Link>
+      <button onClick={deleteBlogs} className="bg-[#AE6FAF] border-black text-white  px-3 py-2 mt-4 rounded-2xl ">Delete</button>
+ <Link  to={"/edit/"+ blogs.id} className="bg-[#603b61] border border-black space-x-4 text-white rounded-2xl px-3 py-2 mt-4"> Edit Me</Link>
  </div>
     </div>
     </>

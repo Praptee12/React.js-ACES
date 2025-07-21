@@ -35,7 +35,7 @@ const Createblog = () => {
   return (
     <><div >
       <Navbar className="bg-pink-300 "/>
-      <div className="max-w-4xl mx-auto p-6 bg-white shadow-lg mt-10 rounded-xl">
+      <div className="max-w-4xl mx-auto p-6 bg-[#f9f1f0] shadow-lg mt-10 rounded-xl">
         <h1 className="text-2xl font-bold mb-4">Create New Blog</h1>
 
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -45,7 +45,7 @@ const Createblog = () => {
             placeholder="Title"
             value={formData.title}
             onChange={handleChange}
-            className="w-full p-3 border border-gray-300 rounded-lg"
+            className="w-full p-3 border border-black rounded-lg"
             required
           />
           <input 
@@ -54,7 +54,7 @@ const Createblog = () => {
             placeholder="Subtitle"
             value={formData.subtitle}
             onChange={handleChange}
-            className="w-full p-3 border border-gray-300 rounded-lg"
+            className="w-full p-3 border border-black rounded-lg"
             required
           />
           <textarea 
@@ -62,7 +62,7 @@ const Createblog = () => {
             placeholder="Description"
             value={formData.description}
             onChange={handleChange}
-            className="w-full p-3 border border-gray-300 rounded-lg"
+            className="w-full p-3 border border-black rounded-lg"
             rows="4"
             required
           />
@@ -72,7 +72,7 @@ const Createblog = () => {
             placeholder="Image URL"
             value={formData.image}
             onChange={handleChange}
-            className="w-full p-3 border border-gray-300 rounded-lg"
+            className="w-full p-3 border border-black rounded-lg"
           />
         </form>
 
@@ -80,7 +80,7 @@ const Createblog = () => {
         <div className="flex justify-end mt-6">
           <button 
             onClick={handleSubmit}
-            className="px-6 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-all"
+            className="px-6 py-2 bg-[#ffa3b8] text-white rounded-full hover:bg-[#fb8da0] transition-all"
           >
             Create
           </button>
