@@ -47,8 +47,10 @@ const SinglePage = () => {
       <h1>{blogs.title}</h1>
       <h1>{blogs.Subtitle}</h1>
       <h1>{blogs.Description}</h1>
-      <button onClick={deleteBlogs} className="bg-blue-400 text-white">Delete</button>
- <Link to={"/edit/"+ blogs.id}> Edit Me</Link>
+      <div className="flex space-x-4">
+      <button onClick={deleteBlogs} className="bg-blue-400 border border-black text-white  px-3 py-2 mt-4 rounded-2xl ">Delete</button>
+ <Link  to={"/edit/"+ blogs.id} className="bg-blue-400  border border-black space-x-4 text-white rounded-2xl px-3 py-2 mt-4"> Edit Me</Link>
+ </div>
     </div>
     </>
   )
