@@ -1,7 +1,8 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, redirect } from 'react-router-dom'
 
 function Card({blog}) {
+
   return (
     <Link to={"/single/"+ blog.id}>
  <div className="max-w-sm mb-6 md:md-0 col-span-12 sm:col-span-6 lg:col-span-4 border p-4 rounded-lg shadow-lg">
@@ -18,6 +19,7 @@ function Card({blog}) {
         {blog.title}
       </span>
     </p>
+   
  
 </div>
  </Link>

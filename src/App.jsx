@@ -16,7 +16,7 @@ function App() {
       <Route path='/Learning-usestate' element={<LearningUseState/>}/>
       <Route path='/single/:id' element={<SinglePage/>}/>
       <Route path='/create' element={<Createblog/>}/>
-      <Route path='/edit' element={<EditForm/>}/>
+      <Route path='/edit/:id' element={<EditForm/>}/>
       
 
   </Routes></BrowserRouter>

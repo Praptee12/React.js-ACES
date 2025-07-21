@@ -1,7 +1,7 @@
 import Navbar from "./Navbar";
 import axios from "axios";
 import React, { useEffect ,useState}from 'react';
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 
 const SinglePage = () => {
   const data =useParams()
@@ -48,7 +48,7 @@ const SinglePage = () => {
       <h1>{blogs.Subtitle}</h1>
       <h1>{blogs.Description}</h1>
       <button onClick={deleteBlogs} className="bg-blue-400 text-white">Delete</button>
-
+ <Link to={"/edit/"+ blogs.id}> Edit Me</Link>
     </div>
     </>
   )

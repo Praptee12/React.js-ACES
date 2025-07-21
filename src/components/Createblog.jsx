@@ -22,6 +22,7 @@ const Createblog = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    // sent data to backened
     const response = await axios.post('https://687af3c4abb83744b7ee4a32.mockapi.io/blogs', formData);
     if (response.status === 201) {
       alert("Blog Created Successfully!");
@@ -32,8 +33,8 @@ const Createblog = () => {
   };
 
   return (
-    <>
-      <Navbar />
+    <><div >
+      <Navbar className="bg-pink-300 "/>
       <div className="max-w-4xl mx-auto p-6 bg-white shadow-lg mt-10 rounded-xl">
         <h1 className="text-2xl font-bold mb-4">Create New Blog</h1>
 
@@ -84,6 +85,7 @@ const Createblog = () => {
             Create
           </button>
         </div>
+      </div>
       </div>
     </>
   );

@@ -18,13 +18,9 @@ const EditForm = () => {
     async function fetchBlog() {
       try {
         const response = await axios.get(`https://687af3c4abb83744b7ee4a32.mockapi.io/blogs/${id}`);
-        if (response.status === 200) {
-          setFormData(response.data);
-        } else {
-          alert("Failed to fetch blog!");
-        }
+        setFormData(response.data);
       } catch (err) {
-        alert("Error fetching blog!");
+        alert("Failed to fetch blog data.");
       }
     }
 
@@ -95,16 +91,15 @@ const EditForm = () => {
             onChange={handleChange}
             className="w-full p-3 border border-gray-300 rounded-lg"
           />
+          <div className="flex justify-end mt-6">
+            <button 
+              type="submit"
+              className="px-6 py-2 bg-green-600 text-white rounded-full hover:bg-green-700 transition-all"
+            >
+              Update
+            </button>
+          </div>
         </form>
-
-        <div className="flex justify-end mt-6">
-          <button 
-            onClick={handleUpdate}
-            className="px-6 py-2 bg-green-600 text-white rounded-full hover:bg-green-700 transition-all"
-          >
-            Update
-          </button>
-        </div>
       </div>
     </>
   );
