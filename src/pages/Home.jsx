@@ -36,7 +36,7 @@ const Home = () => {
          })}
       </div>
       <Link to="/create">
-  <button className="bg-[#EF88AD]  hover:bg-[rgb(165, 56, 96)] text-white px-10 py-2 rounded-xl mt-4">
+  <button className="bg-[#EF88AD]  border border-black text-white px-10 py-2 rounded-xl mt-4 ">
     Create
   </button>
 </Link>
