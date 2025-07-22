@@ -1,6 +1,6 @@
 import React, { useEffect ,useState}from 'react';
 import Navbar from '../components/Navbar';
-import Card from '../components/card';
+import Card from '../components/Card';
 import axios from 'axios';
 import { Link } from "react-router-dom";
 const Home = () => {
